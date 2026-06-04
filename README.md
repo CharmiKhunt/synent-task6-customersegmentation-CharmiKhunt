@@ -1,88 +1,72 @@
-# synent-task6-customersegmentation-CharmiKhunt
-
 # Customer Segmentation Using K-Means Clustering
 
-## Problem Statement
+## Overview
 
-The objective of this project is to perform **customer segmentation** using the **Mall Customer Dataset**. The aim is to group customers based on their purchasing behavior and spending patterns. By identifying different customer segments, businesses can better understand their customers and create targeted marketing strategies.
+This project is about grouping customers based on their income and spending habits using the K-Means Clustering algorithm.
 
-This project applies **K-Means Clustering**, an unsupervised machine learning algorithm, to divide customers into meaningful groups based on selected features.
+Customer segmentation helps businesses understand different types of customers and create better marketing strategies for each group.
 
----
+## Dataset
 
-## Dataset Details
+**Dataset:** Mall Customer Dataset
 
-**Dataset Name:** Mall Customer Dataset
+The dataset contains information about customers visiting a mall.
 
-**Source:** Kaggle
+### Features
 
-The dataset contains customer information collected from mall visitors.
+* CustomerID
+* Gender
+* Age
+* Annual Income (k$)
+* Spending Score (1–100)
 
-### Features included in the dataset:
-
-* **Customer ID** – Unique identifier for each customer
-* **Gender** – Male / Female customer category
-* **Age** – Age of customer
-* **Annual Income (k$)** – Customer’s yearly income
-* **Spending Score (1–100)** – Score assigned based on customer spending behavior
-
-For clustering analysis, the main features used were:
+For clustering, the following features were mainly used:
 
 * Annual Income (k$)
 * Spending Score (1–100)
 
-These features help in understanding customer purchasing habits and segmentation patterns.
+## Steps Performed
 
----
+### 1. Data Loading
 
-## Approach
+The dataset was loaded into Python using Pandas.
 
-The project was implemented using **Python, Jupyter Notebook, Pandas, Scikit-learn, Matplotlib, and Seaborn**.
+### 2. Data Exploration
 
-The following steps were followed:
+Basic information about the dataset was checked, including:
 
-### 1. Data Loading and Exploration
+* Number of rows and columns
+* Data types
+* Missing values
 
-The dataset was loaded using Pandas and explored to understand dataset structure, columns, data types, and basic statistics.
+### 3. Data Preprocessing
 
-### 2. Data Preprocessing
+The required features were selected and scaled using StandardScaler so that both features have equal importance.
 
-Data preprocessing steps included:
+### 4. Finding the Optimal Number of Clusters
 
-* Checking missing values
-* Selecting important features for clustering
-* Feature scaling using **StandardScaler**
+The Elbow Method was used to find the best value of K (number of clusters).
 
-### 3. Determining Optimal Clusters
+### 5. Applying K-Means Clustering
 
-The **Elbow Method** was applied to determine the optimal number of clusters by analyzing the WCSS (Within Cluster Sum of Squares) values.
+The K-Means algorithm was applied to divide customers into different groups based on their spending behavior and income.
 
-### 4. K-Means Clustering
+### 6. Visualization
 
-K-Means clustering algorithm was applied to group customers into different segments based on income and spending behavior.
-
-### 5. Cluster Visualization
-
-Customer clusters were visualized using scatter plots to clearly observe the separation between customer groups and identify cluster patterns.
-
----
+Customer groups were displayed using scatter plots to clearly see the different clusters.
 
 ## Results
 
-The customer segmentation analysis successfully divided customers into multiple groups based on their spending behavior and annual income.
+The customers were divided into different groups such as:
 
-Key observations from the analysis:
+* High Income and High Spending customers
+* High Income and Low Spending customers
+* Low Income and High Spending customers
+* Low Income and Low Spending customers
 
-* **High Income + High Spending customers** were identified as premium customers.
-* **High Income + Low Spending customers** represent potential customers that businesses can target with marketing campaigns.
-* **Low Income + High Spending customers** indicate customers with strong purchasing interest despite lower income.
-* **Low Income + Low Spending customers** form budget-conscious customer groups.
+These groups can help businesses understand customer behavior and improve marketing decisions.
 
-The clustering model provided meaningful customer segments that can help businesses improve customer understanding, marketing strategies, and decision-making.
-
----
-
-## Tools & Technologies Used
+## Technologies Used
 
 * Python
 * Jupyter Notebook
@@ -92,16 +76,14 @@ The clustering model provided meaningful customer segments that can help busines
 * Matplotlib
 * Seaborn
 
----
-
 ## Project Output
 
- Data Preprocessing
- 
- K-Means Clustering Model
- 
- Elbow Method Analysis
- 
- Cluster Visualization
- 
- Customer Segments with Insights
+* Data Preprocessing
+* Elbow Method Graph
+* K-Means Clustering Model
+* Cluster Visualization
+* Customer Segmentation Insights
+
+## Conclusion
+
+This project successfully used K-Means Clustering to segment customers based on annual income and spending score. The generated customer groups can help businesses identify valuable customers and plan better marketing strategies.
